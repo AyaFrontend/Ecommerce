@@ -1,0 +1,19 @@
+.green-hover{
+    transition: background-color 1s ;
+
+}
+
+.green-hover:hover
+{
+   background-color: rgba(69, 89, 49,.5) !important;
+   
+   cursor: pointer;
+}
+
+a{
+    color:#455931;
+    transition: color 1s;
+}
+a:hover{
+   color :rgb(113, 201, 6) !important;
+}

@@ -1,0 +1,226 @@
+.serve-counter
+{
+    width: 50px;
+    border: solid 1px #455931;
+}
+.btn-cart
+{
+
+  background-color: #455931;
+  color: #F2EB88;
+  animation: ani 1s infinite alternate ;
+}
+
+@keyframes ani
+{
+    0%
+    {
+        transform: scale(1 ,1);
+    }
+    100%
+    {
+        transform: scale(.8,.8)
+    }
+
+}
+
+.main_title {
+    position: relative;
+    margin-bottom: 40px !important;
+    text-transform: uppercase;
+  }
+  
+  .main_title:before {
+    content: "";
+    position: absolute;  
+    display: block;
+    width: 120px;
+    height: 2px;
+    background: #ffecbb;
+    bottom: -8px;
+    left: calc(50% - 60px);
+  }
+  .main_title:after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 40px;
+    height: 4px;
+    background: #fcc101;
+    bottom: -9px;
+    left: calc(50% - 20px);
+  }
+  
+  .main_title_left:before,
+  .main_title_left:after {
+    left: 0px;
+  }
+  .progress-bar
+  {
+    background-color: #455931 !important;
+  }
+  /*common styling end*/
+  .member_card_style {
+    position: relative;
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    border-radius: 5px;
+    background: #fff;
+    transition: 0.5s;
+    margin: 20px 0;
+  }
+  
+  .member_card_style img {
+    border-radius: 5px;
+    transition: all 0.3s;
+  }
+  
+  .member_card_style:hover {
+    transform: translateY(-10px);
+  }
+  
+  .member-info {
+    padding-left: 30px;
+    display: inline-block;
+  }
+  
+  .member-info h4 {
+    font-weight: 700;
+    margin-bottom: 5px;
+    font-size: 20px;
+    color: #fcc101;
+    text-transform: uppercase;
+  }
+  
+  .member-info .social {
+    margin-top: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  
+  .member-info .social a {
+    transition: ease-in-out 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    width: 32px;
+    height: 32px;
+    background: #fff3d5;
+    color: #ffb700;
+    text-decoration: none;
+  }
+  
+  .member-info .social a i {
+    font-size: 16px;
+    margin: 0 2px;
+  }
+  
+  .member-info .social a:hover {
+    background: #ffb700;
+    color: #fff;
+  }
+  
+  .member-info .social a + a {
+    margin-left: 8px;
+  }
+  
+  .member-info span {
+    display: block;
+    font-size: 15px;
+    padding-bottom: 10px;
+    position: relative;
+    font-weight: 500;
+  }
+  
+  .member-info span::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 50px;
+    height: 1px;
+    background: #bfe0fd;
+    bottom: 0;
+    left: 0;
+  }
+  
+  /*custom tab style 1*/
+  .custom_tab_style1.nav-tabs {
+    border-bottom: 2px solid #ffb700;
+  }
+  
+  .custom_tab_style1.nav-tabs .nav-link {
+    margin-bottom: -2px;
+    padding: 10px 25px;
+    border-width: 2px;
+  }
+  
+  .custom_tab_style1 .nav-item.show .nav-link,
+  .custom_tab_style1 .nav-link.active {
+    color: #495057;
+    background-color: #f8f9fa;
+    border-width: 2px;
+    border-color: #ffb700 #ffb700 #f8f9fa;
+  }
+  
+  .custom_tab_style1 .nav-link:focus,
+  .custom_tab_style1 .nav-link:hover {
+    border-width: 2px;
+    border-color: #ffb700 #ffb700 #f8f9fa;
+  }
+  
+ 
+  .custom_tab_style2.nav-tabs {
+    border-bottom: 2px solid #ffb700;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .custom_tab_style2.nav-tabs .nav-link {
+    margin-bottom: -2px;
+    padding: 10px 25px;
+    border-width: 2px;
+  }
+  
+  .custom_tab_style2 .nav-item.show .nav-link,
+  .custom_tab_style2 .nav-link.active {
+    color: #495057;
+    background-color: #f8f9fa;
+    border-width: 2px;
+    border-color: #ffb700 #ffb700 #f8f9fa;
+  }
+  
+  .custom_tab_style2 .nav-link:focus,
+  .custom_tab_style2 .nav-link:hover {
+    border-width: 2px;
+    border-color: #ffb700 #ffb700 #f8f9fa;
+  }
+  
+  /*custom tab style 3*/
+  .custom_tab_style3.nav-tabs {
+    border-bottom: 1px solid transparent;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+  }
+  
+  .custom_tab_style3.nav-tabs .nav-link {
+    padding: 5px 20px;
+    margin: 0 10px;
+    border-radius: 0.25rem;
+  }
+  
+  .custom_tab_style3 .nav-item.show .nav-link,
+  .custom_tab_style3 .nav-link.active {
+    color: #495057;
+    background-color: #ffb700;
+    border-color: transparent;
+  }
+  
+  .custom_tab_style3 .nav-link:focus,
+  .custom_tab_style3 .nav-link:hover {
+    background-color: #ffb700;
+    border-color: transparent;
+    color: #fff;
+  }

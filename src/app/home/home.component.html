@@ -1,0 +1,37 @@
+<app-slider></app-slider>
+<app-search></app-search>
+<app-food-list></app-food-list>
+
+
+    <div class="container mt-5 pt-5" id="home">
+        <div class="row py-5 justify-content-center" >
+         
+            <div class="col-lg-4 col-md-6 col-sm-12 p-2 content" *ngFor="let food of foods">
+                 <div class="bg-green-3 shadowd-lg rounded-3 p-2"> 
+                     <div class=" overflow-hidden ">
+                        <img [src] = "food.image" [alt] ="food.title" class="w-100  img-scale ">
+                     </div>
+                     <div class="d-flex justify-content-between align-items-center ">
+                        <h6 class="text-yellow px-2 pb-4 pt-3">{{food.title}}</h6>
+                        <a class="btn bg-yellow text-green-3 rotate-animated more-btn" routerLink="/details/{{food.id}}/overview"> SeE MoRe..</a>
+                     </div>
+                     
+                 </div>
+            </div>
+        
+        </div>
+    </div>
+    <div class="container  d-flex justify-content-end my-5">
+        <app-pagination 
+        [current]="current" 
+        [total]="totalPages"
+        (next)="onNext($event)"
+        (previous)="onPrevious($event)" 
+        (goTo)="onGoTo($event)"
+        >
+     
+        </app-pagination>
+    </div>
+
+
+  

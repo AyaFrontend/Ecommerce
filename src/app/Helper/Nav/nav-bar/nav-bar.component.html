@@ -1,0 +1,39 @@
+<div class="container-fluid bg-green-3 position-relative z-index-1" >
+    <div class="row justify-content-between">
+        <div class="col-md-4 ">
+             <ul class=" unstyled-list d-flex justify-content-end align-items-center  h-100">
+                  <li>
+                      <a routerLink="/home" class="p-2 text-white fs-5 fw-4 text-decoration-none">Home</a>
+                  </li>
+                
+                 <li><ul class=" unstyled-list d-flex justify-content-end align-items-center  h-100">
+                    <li>
+                        <i class="fa fa-user text-white fs-2 "></i>
+                    </li>
+                    <li *ngIf="!isLogin">
+                        <a routerLink="/login" class="p-2 pe-0 text-white fs-5 fw-4 text-decoration-none" *ngIf="!isLogin">Login  </a>
+                    </li>
+                    <li *ngIf="isLogin">
+                      <a routerLink="/login" class="p-2 ps-1 text-white fs-5 fw-4 text-decoration-none"  (click) = "Logout()">Logout</a>
+                    </li>
+     
+                
+               </ul></li>
+             </ul>
+        </div>
+      
+        <div class="col-md-4 d-flex justify-content-center align-items-center">
+           
+            
+                <a class=" icon-size  rounded-circle border  d-flex justify-content-center align-items-center position-relative" routerLink="cart">
+                    <i class="fa fa-cart-plus text-yellow fs-4 " aria-hidden="true"></i>
+                    <p class="bg-yellow counter rounded-circle position-absolute top-10 end-10 d-flex justify-content-center align-items-center text-green-3" >
+                        {{cartCounter}}
+                    </p>
+                </a>
+           
+        </div>
+    </div>
+</div>
+
+

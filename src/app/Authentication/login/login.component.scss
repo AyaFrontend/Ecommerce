@@ -1,0 +1,27 @@
+.bg-imgs
+{
+    background: url(../../../assets/images/brown-onion.png) no-repeat 10px 10px ,
+                url(../../../assets/images/bay-leaves.webp) no-repeat bottom right ,
+                url(../../../assets/images/dried-parsley.webp) no-repeat bottom left;
+
+                
+}
+
+input,button
+{
+   transition:box-shadow .3s , border .3s ,transform .3s , margin-top .3s;
+}
+input:focus{
+  box-shadow: 8px 8px rgba(63, 73, 53, .1) !important;
+  border : 1px solid #F2EB88 !important;
+  transform: translateY(-5px)  scale(1.1 ,1.1);
+  margin-top: .5rem;
+}
+
+button:focus
+{
+  box-shadow: 0px 0px rgba(63, 73, 53, .1) !important;
+  border : 1px solid #F2EB88 !important;
+}
+
+ 

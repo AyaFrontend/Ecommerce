@@ -1,0 +1,17 @@
+$yellow : #F2EB88;
+a
+{
+    cursor: pointer;
+    transition: background-color 1s  , color 1s !important;
+}
+a:hover ,a:focus
+{
+   
+    background-color : $yellow !important;
+    color : #455931;
+}
+.tag
+{
+    width:4rem;
+    height: 2rem;
+}

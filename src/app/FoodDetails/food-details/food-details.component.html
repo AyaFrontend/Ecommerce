@@ -1,0 +1,135 @@
+<div class="container py-5 custom_tab_style1_outer">
+  <div class="row">
+    <div class="col-md-12 text-left d-flex justify-content-between">
+      <h2 class="main_title main_title_left">Details of recipe</h2>
+      <button class="btn bg-green-3 text-yellow " (click)="AddToCart()">Add To Cart</button>
+    </div>
+    
+    <div class="col-md-12">
+      <ul class="nav nav-tabs custom_tab_style1" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="overview-tab" data-bs-toggle="tab" data-bs-target="#overview" type="button" role="tab" aria-controls="overview" aria-selected="true">OVERVIEW</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link " id="intg-tab" data-bs-toggle="tab" data-bs-target="#intg" type="button" role="tab" aria-controls="intg" aria-selected="true">INGREDIENTS</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link " id="steps-tab" data-bs-toggle="tab" data-bs-target="#steps" type="button" role="tab" aria-controls="steps" aria-selected="true">STEPS</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link " id="nuit-tab" data-bs-toggle="tab" data-bs-target="#nuit" type="button" role="tab" aria-controls="nuit" aria-selected="true">NUTRITION</button>
+        </li>
+      </ul>
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview-tab" >
+          <div class="member_card_style">
+           
+            <div class="row">
+              <div class="col-7">
+                <h2>{{recipe.title}}</h2>
+                <img [src]="recipe.image" class="w-100 shadow rounded">
+                <a href="{{recipe.sourceUrl}}">{{recipe.sourceName}}</a>
+              </div>
+             
+              <div class="col-9 mt-3">
+                  <p class="w-40 d-inline-block text-center m-1 py-1 px-3 bg-light text-green-3 rounded-pill">
+                   Serves {{recipe.servings}}
+                  </p>
+                  <p class="w-40 text-center d-inline-block m-1 py-1 px-3 bg-light text-green-3 rounded-pill">
+                    Ready in {{recipe.readyInMinutes}} minutes
+                  </p>
+                  <p class="w-40 text-center py-1 px-3 d-inline-block  m-1 bg-light text-green-3 rounded-pill">
+                    Health score {{recipe.healthScore}} %
+                  </p>
+                  <p class="w-40 text-center py-1 px-3 d-inline-block m-1 bg-light text-green-3 rounded-pill">
+                    {{recipe.pricePerServing}}$ per serving
+                  </p>
+                  
+              </div>
+              <div class="col-9 mt-5 ">
+                <p *ngFor="let type of recipe.dishTypes" class="rounded text-center d-inline-block m-1 py-1 px-3  bg-green-3 text-yellow">
+                   {{type}} 
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-pane fade show " id="intg" role="tabpanel" aria-labelledby="intg-tab" >
+          <div class="member_card_style">
+           
+            <div class="mb-5">
+              <p class="d-inline-block me-2 text-green-1 fw-5 "> Serves number</p>
+              <input type="number" [(ngModel)] = "serveNum" class="d-inline-block serve-counter rounded text-green-2 text-center fw-5">
+             </div>
+        
+             <div class="row">
+        
+               <div class="col-sm-12 col-lg-6  d-flex align-items-center" *ngFor="let integ of recipe.extendedIngredients">
+                 <div class="my-2 mx-3" >
+                    <img src = "https://spoonacular.com/cdn/ingredients_100x100/{{integ.image}}">
+                 </div>
+               
+                <h5 class="p-1 text-green-1">{{integ.amount  * serveNum}}</h5>
+                <h5 class="pe-2 text-green-1">{{integ.unit}}</h5>
+                <h5 class="p-1 text-green-3">{{integ.originalName}}</h5>
+                
+               </div>
+             </div>
+          </div>
+        </div>
+
+        <div class="tab-pane fade show " id="steps" role="tabpanel" aria-labelledby="steps-tab" >
+          <div class="member_card_style">
+           
+            <div class="row">
+              <div class="col-12 p-3 rounded-3 bg-light text-green-1  fs-5 " [innerHtml]=" recipe.instructions">
+               
+               
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-pane fade show " id="nuit" role="tabpanel" aria-labelledby="nuit-tab" >
+          <div class="member_card_style">
+           
+            <div class="row">
+              <table class="table table-hover">
+                <thead>
+                  <th>Name</th>
+                  <th>Amount</th>
+                  <th>Daily needs</th>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let nut of nutrients" class="text-green-3">
+                    <td>{{nut.name}}</td>
+                    <td>{{nut.amount}} {{nut.unit}}</td>
+                    <td>
+                      
+                       {{nut.percentOfDailyNeeds}} %
+                       <div class="progress">
+                        <div class="progress-bar" role="progressbar" [ngStyle]="{'width' : nut.percentOfDailyNeeds +'%'}" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div></td>
+                  </tr>
+                </tbody>
+              </table>
+             <div class="m-auto">
+               <button class="btn bg-green-3 text-yellow" (click)="More()"  [disabled]="disabled">more..</button>
+             </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container mt-5">
+ 
+  <h4 class="text-green-3 mt-5">Sammary</h4>
+  <p innerHtml = {{recipe.summary!}} class="p-3 rounded-3 bg-light text-green-3 text-center"></p>
+</div>
+
+
+
+

@@ -1,0 +1,35 @@
+
+  <div class="container  vh-100 w-50 d-flex justify-content-center align-items-center ">
+    <div class="row py-5 justify-content-center align-items-center rounded-3 shadow bg-white  translate-animated">
+        <div class="col-12 translate-animated ">
+            <h5 class="text-center text-green-3">Login Now :)</h5>
+        </div>
+        <div class="alert alert-danger alert-dismissible fade show w-75" role="alert" [hidden]="hidden" >
+          <strong>{{errorMessage}}</strong> 
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        <form [formGroup]="loginForm" (ngSubmit)="Login(loginForm)" class="d-flex  flex-column align-items-center">
+          <div class="col-10  mt-2 translate-animated">
+            <input type="email" placeholder="Email" class="text-muted form-control rounded-4 py-3" formControlName ="email"
+            (blur)="validation('email' ,loginForm)" (keypress)="alertHide()">
+            
+          </div>
+          <div class="col-10 mt-2 ">
+            <input type="password" placeholder="Password" class="text-muted form-control rounded-4 py-3" formArrayName ="password"
+            formControlName="password" (blur)="validation('password' ,loginForm)" (keypress)="alertHide()">
+          </div>
+         
+          <div class="col-10 mt-2 translate-animated">
+              <button class="btn bg-yellow w-100 rounded-4 py-3 text-green-3" [disabled]="loginForm.invalid">Login</button>
+          </div>
+        </form>
+       
+
+         <div class="col-12 ">
+            <a  class="text-center text-green-3 text-decoration-none d-inline-block w-100 p-2" routerLink="/register">Register now !</a>
+        </div>
+     </div>
+</div>
+
+<div class="layer "></div>
+

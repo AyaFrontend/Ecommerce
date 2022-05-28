@@ -1,1 +1,197 @@
 /* You can add global styles to this file, and also import other style files */
+$green-1 :#1D2618;
+$green-2 :#324028;
+$green-3 :#455931;
+$yellow : #F2EB88;
+$brown : #A69151;
+
+
+*
+{
+    font-family:'Gill Sans','Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+.text-green-1
+{
+    color: $green-1;
+}
+.text-green-2
+{
+    color: $green-2;
+}
+.text-green-3
+{
+    color: $green-3;
+}
+.text-yellow
+{
+    color: $yellow;
+}
+.text-brown
+{
+    color: $brown;
+}
+
+
+.bg-green-3
+{
+    background-color: $green-3;
+}
+.bg-brown
+{
+    background-color: $brown;
+}
+.bg-yellow
+{
+    background-color: $yellow;
+}
+.bg-green-light
+{
+    background-color:rgba(29, 38, 24 , 4) ;
+}
+.unstyled-list
+{
+    list-style: none;
+}
+.icon-size
+{
+    width: 40px;
+    height: 40px;
+}
+
+.overflow-hidden
+{
+    overflow: hidden;
+}
+
+
+.rotate-animated
+{
+    animation: rotated 1s 2  ;
+}
+
+@keyframes rotated {
+    0%
+    {
+        transform: rotateY(45deg);
+      
+        
+    }
+    100%
+    {
+        transform: rotateY(0deg);
+       
+    }
+}
+
+
+.translate-animated
+{
+    animation: translate 1s 1 ;
+}
+
+@keyframes translate {
+    0%
+    {
+        transform: translate(10px , 10px);
+       
+        
+    }
+    50%
+    {
+        transform: translate(-20px ,-20px);
+       
+    }
+    100%
+    {
+        transform: translate(10px , 10px);
+    }
+    
+}
+.flex-nowrap
+{
+  flex-wrap: nowrap;
+}
+.hove{
+  transition: background-color 1s , color 1s ;
+}
+.hove:hover
+{
+    background-color:$green-3;
+    color : $yellow !important;
+}
+.text-center
+{
+    text-align: center;
+}
+.w-40
+{
+    width:40%;
+}
+.round
+{
+    border-radius: 0px 100px;
+   
+}
+.nav-link
+{
+    cursor: pointer;
+    transition: background-color 1s  , color 1s !important;
+}
+.nav-link:focus, .nav-link:hover {
+    background-color: $green-3!important;
+    color: $yellow !important;
+}
+
+.x{
+   
+    animation: trans 2s ;
+    
+}
+.x2
+{
+    animation: trans2 1s ;
+}
+@keyframes trans2 {
+    0%
+    {
+        transform: translateX(100%);
+    }
+    100%
+    {
+        transform: translateX(0%);
+    }
+}
+
+@keyframes trans {
+    0%
+    {
+        transform: translateX(-100%);
+    }
+    100%
+    {
+        transform: translateX(0%);
+    }
+}
+
+.layer
+{
+    position: absolute;
+     top:0 ;
+     left: 0; 
+     right:0 ;
+     bottom:0;
+    opacity: .2;
+     z-index: -1;
+    
+     background: url(../../../Ecommerce/Ecommerce/src/assets/images/dried-parsley.webp) no-repeat 50px 50px,
+     url(../../../Ecommerce/Ecommerce/src/assets/images/brown-onion.png) no-repeat 80px 200px,
+     url(../../../Ecommerce/Ecommerce/src/assets/images/honey.png) no-repeat bottom left,
+     url(../../../Ecommerce/Ecommerce/src/assets/images/bay-leaves.webp) no-repeat right 100px,
+    
+     url(../../../Ecommerce/Ecommerce/src/assets/images/tomato.webp) no-repeat  1000px 300px,
+     url(../../../Ecommerce/Ecommerce/src/assets/images/flour.webp) no-repeat right bottom,
+     url(../../../Ecommerce/Ecommerce/src/assets/images/mango.webp) no-repeat 1100px 400px,
+
+
+}
